@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import ProjetoBase from './components/ProjetoBase/ProjetoBase';
+import React from 'react';
+import Calculator from './components/calculator/calculator.js';
 
-export default class App extends Component {
-  render() {
-    return <ProjetoBase />;
-  }
+export default function App() {
+  return <Calculator />;
 }
