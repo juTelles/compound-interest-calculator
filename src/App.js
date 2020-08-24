@@ -1,6 +1,6 @@
 import React from 'react';
-import Calculator from './components/calculator/calculator.js';
+import Form from './components/form/form.js';
 
 export default function App() {
-  return <Calculator />;
+  return <Form />;
 }
