@@ -1,22 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-export default function Installment({result}) {
-  
-  const int = Number(result.finalValue - result.initialValue) 
-  const intPercent = Number((int*100)/result.initialValue);
+export default function Installment({ result }) {
 
+  const { installment, finalValue, initialValue } = result;
 
-    return ( <div className="row">
-      <div className="col s7 m5">
+  const difference = finalValue - initialValue;
+  const differencePercentage = ((difference * 100) / initialValue).toFixed(2);
+
+  return (
+  <div className="row">
+    <div className="col s7 m7">
       <div className="card green">
         <div className="card-content white-text center">
-        <span>{result.monthsDefined}</span> <br/>
-        <span>{(result.finalValue).toFixed(2)}</span> <br/>
-        <span>{int.toFixed(2)}</span> <br/>
-        <span>{intPercent.toFixed(2)}%</span> 
+          <span>{installment} </span> <br />
+          <span>R${finalValue}</span> <br />
+          <span>R${difference.toFixed(2)}</span> <br />
+          <span>{isNaN(differencePercentage) ? 0 : differencePercentage}%</span>
         </div>
       </div>
     </div>
   </div>
-)
+  )
 }
